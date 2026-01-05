@@ -33,7 +33,7 @@ def treinar_modelo():
     x_treino, x_teste, y_treino, y_teste = separar_dados()
 
     print("Treinando o modelo XGBoost...")
-    healthIA = XGBoost()
+    healthIA = XGBoost(n_estimators=150, learning_rate=0.05, max_depth=3, min_child_weight=1, random_state=42)
     healthIA.fit(x_treino, y_treino)
     print("Treinamento concluido.")
 
